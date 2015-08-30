@@ -66,31 +66,16 @@ void loop()
   processCapSensor(total3, state3, ledPin3);
   processCapSensor(total4, state4, ledPin4);
   processCapSensor(total5, state5, ledPin5);
-
-  /*
-  if (total1 > threshold && state1 == LOW) {// || total2 > 99 || total3 > 99 && state == LOW) {//originally 200 for both low and high
-    state1 = HIGH;
-    digitalWrite (ledPin1, !digitalRead(ledPin1));  //LED on
-    //digitalWrite (ledPin1, state1);  
-  }
-  
- if (total1 < threshold && state1 == HIGH)   // only set the state low when the cap sense is really lower 
-  {
-    state1 = LOW;
-    //digitalWrite (ledPin1, !digitalRead(ledPin1));  //LED off
-    //digitalWrite (ledPin1, state1);  
-  } 
-  */
  
   delay(100);                             // arbitrary delay to limit data to serial port
 }
 
 void printSerial(int total, int state, int ledPin) {
-  Serial.print(total);                  // print sensor output 1
+  Serial.print(total);                  
   Serial.print("\t");
-  Serial.print(state);                  // print sensor output 1
+  Serial.print(state);                  
   Serial.print("\t");
-  Serial.print(digitalRead(ledPin));                  // print sensor output 1
+  Serial.print(digitalRead(ledPin));                  
   Serial.print("\t");
 }
 
